@@ -1,7 +1,7 @@
 import axios from "axios";
 import Cookies from "universal-cookie";
 
-const API_URL = "http://localhost:5000/api";
+const API_URL = "https://interview.wallayl.com/api";
 export class UserService {
   public static async register(data: {
     name: string;
