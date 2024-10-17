@@ -1,0 +1,25 @@
+version: "3.8"
+services:
+  backend:
+    build:
+      context: ./backend
+    container_name: nestjs-backend
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+    networks:
+      - fullstack-network
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: react-frontend
+    ports:
+      - "80:80"
+    networks:
+      - fullstack-network
+
+networks:
+  fullstack-network:
+    driver: bridge

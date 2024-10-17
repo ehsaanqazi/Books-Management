@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/main.tsx","./src/modules/books/addbooks.tsx","./src/modules/books/listbooks.tsx","./src/modules/books/updatebook.tsx","./src/modules/user/login.tsx","./src/modules/user/register.tsx","./src/routing/approutes.tsx","./src/services/bookservice.ts","./src/services/userservice.ts"],"version":"5.6.3"}
