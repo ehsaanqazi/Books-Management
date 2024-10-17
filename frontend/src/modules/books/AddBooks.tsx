@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { BooksService } from "../../services/BookService";
@@ -12,6 +12,12 @@ interface AddBookProps {
 const AddBook = ({ isOpen, onClose, onBookAdded }: AddBookProps) => {
   const [loading, setLoading] = useState(false);
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (!isOpen) {
+      setSuccessMessage(null);
+    }
+  }, [isOpen]);
 
   const validationSchema = Yup.object({
     title: Yup.string()
@@ -55,7 +61,7 @@ const AddBook = ({ isOpen, onClose, onBookAdded }: AddBookProps) => {
             <div className="flex justify-end space-x-2">
               <button
                 className="bg-green-500 text-white px-4 py-2 rounded-md"
-                onClick={() => setSuccessMessage(null)} // Reset form to add another book
+                onClick={() => setSuccessMessage(null)}
               >
                 Add Another
               </button>

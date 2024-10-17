@@ -168,7 +168,9 @@ const ListBooks = () => {
 
       <AddBook
         isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
+        onClose={() => {
+          setIsModalOpen(false);
+        }}
         onBookAdded={handleBookAdded}
       />
 
